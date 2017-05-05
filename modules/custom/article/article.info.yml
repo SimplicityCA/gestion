@@ -1,0 +1,15 @@
+name: Artículo
+description: 'Provides Artículo tipo de contenido and related configuration. Use los <em>artículos</em> para contenido que tenga relevancia temporal como las noticias o las publicaciones en blogs.'
+type: module
+core: 8.x
+dependencies:
+  - comment
+  - field
+  - file
+  - image
+  - node
+  - path
+  - rdf
+  - taxonomy
+  - text
+  - user
