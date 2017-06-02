@@ -1,0 +1,133 @@
+#block-views-block-analisis-homepage-view-block-1{
+	div[data-history-node-id="38"]{
+		.field--name-node-title{
+			background-color: #2E3092;
+			h2{
+				margin-bottom:0;
+			    padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			a{
+				color:#fff;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.view-content{
+		#homePageCarousel{
+			.carousel-control{
+				width: 0%;
+			}
+			.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+				margin-left: 0px;	
+			}
+			.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next{
+				margin-right: 0px;	
+			}
+			.carousel-inner{
+				/*min-height:450px;
+				max-height:450px;*/
+			}
+			div[resource="/analisis"]{
+				display:none;
+			}
+			.field--name-field-image{
+				width: 100%;
+			    z-index: -1;
+			    position: relative;
+			    top: 0;
+			    padding: 0;
+			}
+			.teaser-field-group{
+				position: absolute;
+				top:0;
+				width:100%;
+				.field--item{
+					h2{
+						margin-top:0;
+						text-transform: uppercase;
+						margin-bottom:0;
+						a{
+							color:#fff;
+							font-size:0.5em;
+							text-decoration: none;
+							@media (max-width: 767px){
+								font-size:0.3em;
+							}
+							@media (max-width: 991px){
+								font-size:0.4em;
+							}
+						}
+					}
+					div[about="/sociedad"]{
+						h2{
+							background-color: #1B8F82;
+						}
+					}
+					div[about="/finanzas"]{
+						h2{
+							background-color: #B83A96;
+						}
+					}
+					div[about="/economia"]{
+						h2{
+							background-color: #F57F21;
+						}
+					}
+					div[about="/estrategia"]{
+						h2{
+							background-color: #FCB81D;
+						}
+					}
+					div[about="/investigacion"]{
+						h2{
+							background-color: #7F3C96;
+						}
+					}
+					.field--name-field-icono{
+						position:absolute;
+						right:0;
+						margin-top:5px;
+					}	
+				}
+				.title-and-author-wrapper{
+					background-color: #000;
+					color:#fff;
+					padding-bottom:5px;
+					width: 65%;
+					@media (max-width: 767px){
+						width: 85%;
+					}
+					.field--name-node-title{
+						h2{
+							line-height: 0.7;
+						}
+					}
+					.field--name-field-autor{
+						margin-top:3px;
+						@media (max-width: 767px){
+							font-size:0.7em;
+						}
+						@media (max-width: 991px){
+							font-size:0.8em;
+						}
+					}
+				}
+				.field--type-text-with-summary{
+					background-color: #fff;
+					color:#000;
+					opacity:0.7;
+					margin-top:5px;
+					width: 80%;
+					@media (max-width: 767px){
+						display:none;
+					}
+					@media (max-width: 991px){
+						font-size:0.9em;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,5 +1,40 @@
 .navbar-default{
+	@media (min-width: 768px){
+		padding:0;
+	}
 	.navbar-header{
 		width:100%;
+	}
+
+	.navbar-collapse {
+		padding-left:0px;
+		padding-right:0px;
+		text-align: center;
+		.navbar-nav > li{
+			@media (min-width: 768px){
+		      display: inline-block;
+		      float: none;
+		      vertical-align: top;
+	      	}
+	    }
+	}
+	
+	.menu{
+		width: 100%;
+		background-color: #000;
+		> li > a, > li:focus > a, > li:visited > a, > li:hover > a, > li:active > a{
+			color: #fff;
+			background-color: #000;	
+		}
+		>li{
+			ul{
+				li:first-child{
+					@media (min-width: 768px){
+						display: none;	
+					}
+				}
+				
+			}
+		} 
 	}
 }
