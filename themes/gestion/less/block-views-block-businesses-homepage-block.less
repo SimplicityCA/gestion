@@ -1,0 +1,50 @@
+@brown_color: #BA5415;
+
+#block-views-block-businesses-homepage-block{
+	div[data-history-node-id="40"]{
+		.field--name-node-title{
+			background-color: @brown_color;
+			h2{
+			    padding-top: 10px;
+				padding-bottom: 10px;
+				text-transform: uppercase;
+			}
+			a{
+				color:#fff;
+				text-decoration: none;
+			}
+		}
+	}
+	.views-row{
+		.make-md-column(6);
+		.image-and-title-wrapper{
+			position:relative;
+			.field--name-node-title{
+				@media (min-width: 992px){
+					position: absolute;
+				    bottom: 40px;
+				    z-index: 1;
+				    width:60%;
+				}
+			    span a{
+			    	background-color: @brown_color;
+			    	color:#fff;
+			    	text-decoration: none;
+			    }
+			}	
+		}
+		
+	}
+	.views-row:nth-child(2n){
+		padding-right:0;
+		@media (max-width: 991px){
+			padding-left:0;
+		}
+	}
+	.views-row:nth-child(2n+1){
+		padding-left:0;
+		@media (max-width: 991px){
+			padding-right:0;
+		}
+	}
+}
