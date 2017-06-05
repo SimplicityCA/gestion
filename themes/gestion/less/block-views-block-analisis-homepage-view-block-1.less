@@ -1,6 +1,6 @@
 @blue_color: #2E3092;
 
-#block-views-block-analisis-homepage-view-block-1{
+//#block-views-block-analisis-homepage-view-block-1{
 	div[data-history-node-id="38"]{
 		.field--name-node-title{
 			background-color: @blue_color;
@@ -21,7 +21,7 @@
 	#block-views-block-secciones-view-secciones-block{
 		.block-title{
 			.make-sm-column(4);
-			.make-xs-column(3);
+			.make-xs-column(12);
 			padding-left:5px;
 			padding-right:0px;
 			text-transform: uppercase;
@@ -29,10 +29,15 @@
 		}
 		.form-group{
 			.make-sm-column(8);
-			.make-xs-column(9);
+			.make-xs-column(12);
 			padding:0;
 			.view-display-id-secciones_block{
 				float:right;
+				@media (max-width: 767px){
+					float:left;
+					padding-bottom: 7px;
+					padding-top: 0px;
+				}
 				padding-top: 7px;
 				.views-row{
 					float:left;
@@ -94,13 +99,13 @@
 							padding-left:5px;
 						}
 					}
-					div[about="/finanzas"]{
+					div[about="/tu-dinero"]{
 						h2{
 							background-color: #B83A96;
 							padding-left:5px;
 						}
 					}
-					div[about="/economia"]{
+					div[about="/economia-y-finanzas"]{
 						h2{
 							background-color: #F57F21;
 							padding-left:5px;
@@ -165,4 +170,4 @@
 			}
 		}
 	}
-}
+//}

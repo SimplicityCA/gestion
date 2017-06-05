@@ -5,6 +5,9 @@
 	.make-xs-column(12);
 	.make-md-column(3);
 	background-color: @article_color;
+	@media (max-width: 991px){
+		margin-top:10px;
+	}
 	.nav::before {
 		background-image: url('../../../themes/gestion/images/gestion-1.png');
 		background-size: 50px 50px;

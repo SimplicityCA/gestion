@@ -12,10 +12,23 @@ header.container{
 		padding:0;
 	}
 	.navbar-header{
+		float:none;
 		.container();
+		@media (max-width: 1200px){
+			width:100%;
+			padding-left:30px;
+			padding-right:30px;
+		}
+		@media (max-width: 480px){
+			width:100%;
+			padding-left:15px;
+			padding-right:15px;
+		}
+
 		.navbar-toggle {
 		    border-color: #000;
 		    background-color: #000;
+		    margin-right:0px;
 		    .icon-bar {
 			    background-color: #fff;
 			}

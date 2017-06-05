@@ -2,6 +2,9 @@
 	.make-sm-column(6);
 	.make-md-column(4);
 	padding-left:0;
+	@media (max-width: 991px){
+		padding-right:0;
+	}
 
 	.block-title{
 		background-color: @red_color;
@@ -27,22 +30,12 @@
 
 	.node--type-libro:nth-child(1){
 		padding-left:0;
-		@media (max-width: 767px){
-			padding-right:0;
-		}
 	}
 	.node--type-libro:nth-child(2){
 		padding-left:7.5px;
 		padding-right:7.5px;
-		@media (max-width: 767px){
-			padding-right:0;
-			padding-left:0;
-		}
 	}
 	.node--type-libro:nth-child(3){
 		padding-right:0;
-		@media (max-width: 767px){
-			padding-left:0;
-		}
 	}
 }

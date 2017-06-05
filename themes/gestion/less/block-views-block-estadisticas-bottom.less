@@ -6,6 +6,9 @@
 	.make-sm-column(6);
 	.make-md-column(5);
 	padding-left:0;
+	@media (max-width: 767px){
+		padding-right:0;
+	}
 	.block-title{
 		background-color: @red_color;
 		color:#fff;
@@ -38,19 +41,28 @@
 				font-weight: normal;
 				
 				@media (min-width: 768px){
-					min-height: 44px;
-	    			max-height: 44px;
-	    			margin-top:17px;
-	    			font-size:10px;
+					min-height: 20px;
+				    max-height: 20px;
+				    margin-top: 14px;
+				    font-size: 12px;
 				}
 				@media (min-width: 992px){    
+			        min-height: 69.5px;
+				    max-height: 69.5px;
+				    font-size: 13px;
+				    margin-top: 18px;
+    			}
+    			@media (min-width: 1200px){    
 					min-height: 75px;
 	    			max-height: 75px;
-	    			font-size:12px;
-	    			margin-top:20px;
+	    			font-size: 14px;
+    				margin-top: 27px;
     			}
     			@media (max-width: 767px){    
-					font-size:15px;
+					font-size:13px;
+					min-height: 30px;
+				    max-height: 30px;
+				    margin-top: 8px;
     			}
 			}
 		}
@@ -73,7 +85,7 @@
 			margin-left:8px;
 		}
 		@media (max-width: 767px){
-			margin-left:15px;
+			margin-left:8px;
 		}
 		
 	}
