@@ -1,7 +1,10 @@
+@blue_color: #2E3092;
+
 #block-views-block-analisis-homepage-view-block-1{
 	div[data-history-node-id="38"]{
 		.field--name-node-title{
-			background-color: #2E3092;
+			background-color: @blue_color;
+			padding-left:5px;
 			h2{
 				margin-bottom:0;
 			    padding-top: 10px;
@@ -11,10 +14,33 @@
 			a{
 				color:#fff;
 				text-decoration: none;
+				display:block;
 			}
 		}
 	}
-
+	#block-views-block-secciones-view-secciones-block{
+		.block-title{
+			.make-sm-column(4);
+			.make-xs-column(3);
+			padding-left:5px;
+			padding-right:0px;
+			text-transform: uppercase;
+			color: @blue_color;
+		}
+		.form-group{
+			.make-sm-column(8);
+			.make-xs-column(9);
+			padding:0;
+			.view-display-id-secciones_block{
+				float:right;
+				padding-top: 7px;
+				.views-row{
+					float:left;
+				}
+			}
+			
+		}
+	}
 	.view-content{
 		#homePageCarousel{
 			.carousel-control{
@@ -49,6 +75,7 @@
 						margin-top:0;
 						text-transform: uppercase;
 						margin-bottom:0;
+						padding-left:5px;
 						a{
 							color:#fff;
 							font-size:0.5em;
@@ -64,26 +91,31 @@
 					div[about="/sociedad"]{
 						h2{
 							background-color: #1B8F82;
+							padding-left:5px;
 						}
 					}
 					div[about="/finanzas"]{
 						h2{
 							background-color: #B83A96;
+							padding-left:5px;
 						}
 					}
 					div[about="/economia"]{
 						h2{
 							background-color: #F57F21;
+							padding-left:5px;
 						}
 					}
 					div[about="/estrategia"]{
 						h2{
 							background-color: #FCB81D;
+							padding-left:5px;
 						}
 					}
 					div[about="/investigacion"]{
 						h2{
 							background-color: #7F3C96;
+							padding-left:5px;
 						}
 					}
 					.field--name-field-icono{
@@ -107,6 +139,7 @@
 					}
 					.field--name-field-autor{
 						margin-top:3px;
+						padding-left:10px;
 						@media (max-width: 767px){
 							font-size:0.7em;
 						}
@@ -121,6 +154,7 @@
 					opacity:0.7;
 					margin-top:5px;
 					width: 80%;
+					padding-left:10px;
 					@media (max-width: 767px){
 						display:none;
 					}

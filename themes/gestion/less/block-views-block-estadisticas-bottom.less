@@ -3,7 +3,9 @@
 @number_color: #2D2E91;
 
 #block-views-block-estadisticas-bottom{
-	.make-sm-column(5);
+	.make-sm-column(6);
+	.make-md-column(5);
+	padding-left:0;
 	.block-title{
 		background-color: @red_color;
 		color:#fff;
@@ -11,10 +13,14 @@
     	padding-bottom: 5px;
 	}
 	.node--type-estadistica{
-		.make-xs-column(12);
 		background-color: @article_color;
 		@media (min-width: 992px){    
 			width: 23.3%;
+			float:left;
+		}
+		@media (max-width: 991px){    
+			width: 48.8%;
+			float:left;
 		}
 		.field--name-field-valor{
 			color: @number_color;
@@ -31,34 +37,44 @@
 			h2{
 				font-weight: normal;
 				
-				@media (min-width: 992px){
+				@media (min-width: 768px){
 					min-height: 44px;
 	    			max-height: 44px;
 	    			margin-top:17px;
 	    			font-size:10px;
 				}
-				@media (min-width: 1200px){    
+				@media (min-width: 992px){    
 					min-height: 75px;
 	    			max-height: 75px;
 	    			font-size:12px;
 	    			margin-top:20px;
     			}
-    			@media (max-width: 991px){    
+    			@media (max-width: 767px){    
 					font-size:15px;
     			}
 			}
 		}
 	}
 	.node--type-estadistica:not(:first-child){
-		
-		@media (min-width: 992px){
-			margin-left:8px;
+		@media (min-width: 992px){    
+			margin-left:8.5px;
 		}
 		@media (min-width: 1200px){    
 			margin-left:10px;
 		}
+	}
+	.node--type-estadistica:nth-child(n+3){
 		@media (max-width: 991px){
 			margin-top:8px;
 		}
+	}
+	.node--type-estadistica:nth-child(2n){
+		@media (max-width: 991px){
+			margin-left:8px;
+		}
+		@media (max-width: 767px){
+			margin-left:15px;
+		}
+		
 	}
 }
