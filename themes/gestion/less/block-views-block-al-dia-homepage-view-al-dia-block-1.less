@@ -9,6 +9,10 @@
 			    padding-top: 10px;
 				padding-bottom: 10px;
 				text-transform: uppercase;
+				@media (max-width: 768px){
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
 			}
 			a{
 				color:#fff;
@@ -25,11 +29,21 @@
 	    position: relative;
 	    margin-bottom:5px;
 		.views-field-title{
-			@media (min-width: 992px){
+			@media (max-width: 768px){
+				line-height: 1.2em;
+			}
+			@media (min-width: 991px){
 				position: absolute;
 	    		z-index: 1;
 	    		bottom:20px;
 	    		max-width:94%;
+				background-color: fade(@red_color,80%);
+    		}
+    		@media (min-width: 1080px){
+    			position: absolute;
+	    		z-index: 1;
+	    		bottom:20px;
+	    		max-width:94.5%;
 				background-color: fade(@red_color,80%);
     		}
     		padding-left:5px;

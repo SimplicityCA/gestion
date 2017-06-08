@@ -9,6 +9,10 @@
 			    padding-top: 10px;
 				padding-bottom: 10px;
 				text-transform: uppercase;
+				@media (max-width: 768px){
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
 			}
 			a{
 				color:#fff;
@@ -22,11 +26,14 @@
 		.image-and-title-wrapper{
 			position:relative;
 			.field--name-node-title{
+				@media (max-width: 768px){
+					line-height: 1.2em;
+				}
 				@media (min-width: 992px){
 					position: absolute;
 				    bottom: 40px;
 				    z-index: 1;
-				    width:60%;
+				    width:100%;
 				    background-color: fade(@brown_color,80%);
 				}
 				padding-left: 5px;

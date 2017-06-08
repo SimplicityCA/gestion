@@ -10,6 +10,10 @@
 			    padding-top: 10px;
 				padding-bottom: 10px;
 				text-transform: uppercase;
+				@media (max-width: 768px){
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
 			}
 			a{
 				color:#fff;
@@ -78,7 +82,6 @@
 				.field--item{
 					h2{
 						margin-top:0;
-						text-transform: uppercase;
 						margin-bottom:0;
 						padding-left:5px;
 						a{
@@ -97,54 +100,61 @@
 						h2{
 							background-color: #1B8F82;
 							padding-left:5px;
+							text-transform: uppercase;
 						}
 					}
 					div[about$="/tu-dinero"]{
 						h2{
 							background-color: #B83A96;
 							padding-left:5px;
+							text-transform: uppercase;
 						}
 					}
 					div[about$="/economia-y-finanzas"]{
 						h2{
 							background-color: #F57F21;
 							padding-left:5px;
+							text-transform: uppercase;
 						}
 					}
 					div[about$="/estrategia"]{
 						h2{
 							background-color: #FCB81D;
 							padding-left:5px;
+							text-transform: uppercase;
 						}
 					}
 					div[about$="/investigacion"]{
 						h2{
 							background-color: #7F3C96;
 							padding-left:5px;
+							text-transform: uppercase;
 						}
 					}
 					.field--name-field-icono{
-						position:absolute;
-						right:0;
-						margin-top:5px;
+						display:none;
 					}	
 				}
 				.title-and-author-wrapper{
 					background-color: #000;
 					color:#fff;
 					padding-bottom:5px;
-					width: 65%;
+					width: 100%;
 					@media (max-width: 767px){
-						width: 85%;
+						width: 100%;
 					}
 					.field--name-node-title{
 						h2{
-							line-height: 0.7;
+							line-height: 0.7em;
+							@media (max-width: 767px){
+								line-height:0.4em;
+							}
 						}
 					}
 					.field--name-field-autor{
 						margin-top:3px;
 						padding-left:10px;
+						text-transform: uppercase;
 						@media (max-width: 767px){
 							font-size:0.7em;
 						}
@@ -152,13 +162,20 @@
 							font-size:0.8em;
 						}
 					}
+					.field--name-field-autor::before {
+				  		color: #fff;
+					  	content: "■";
+					  	float:left;
+					  	position:relative;
+					  	left:-4px;
+					}
 				}
 				.field--type-text-with-summary{
 					background-color: #fff;
 					color:#000;
 					opacity:0.7;
 					margin-top:5px;
-					width: 80%;
+					width: 50%;
 					padding-left:10px;
 					@media (max-width: 767px){
 						display:none;
