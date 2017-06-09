@@ -1,4 +1,4 @@
-@blue_color: #2E3092;
+
 
 //#block-views-block-analisis-homepage-view-block-1{
 	div[data-history-node-id="38"]{
@@ -98,35 +98,35 @@
 					}
 					div[about$="/sociedad"]{
 						h2{
-							background-color: #1B8F82;
+							background-color: @sociedad_background;
 							padding-left:5px;
 							text-transform: uppercase;
 						}
 					}
 					div[about$="/tu-dinero"]{
 						h2{
-							background-color: #B83A96;
+							background-color: @tudinero_background;
 							padding-left:5px;
 							text-transform: uppercase;
 						}
 					}
 					div[about$="/economia-y-finanzas"]{
 						h2{
-							background-color: #F57F21;
+							background-color: @economia_background;
 							padding-left:5px;
 							text-transform: uppercase;
 						}
 					}
 					div[about$="/estrategia"]{
 						h2{
-							background-color: #FCB81D;
+							background-color: @estrategia_background;
 							padding-left:5px;
 							text-transform: uppercase;
 						}
 					}
 					div[about$="/investigacion"]{
 						h2{
-							background-color: #7F3C96;
+							background-color: @investigacion_background;
 							padding-left:5px;
 							text-transform: uppercase;
 						}
@@ -163,12 +163,25 @@
 							font-size:0.8em;
 						}
 					}
-					.field--name-field-autor::before {
-				  		color: #fff;
-					  	content: "■";
-					  	float:left;
-					  	position:relative;
-					  	left:-4px;
+					.field--name-field-autor.estrategia::before {
+				  		color: @estrategia_background;
+				  		.block-before-autor();
+					}
+					.field--name-field-autor.investigacion::before {
+				  		color: @investigacion_background;
+				  		.block-before-autor();
+					}
+					.field--name-field-autor.economia-y-finanzas::before {
+				  		color: @economia_background;
+				  		.block-before-autor();
+					}
+					.field--name-field-autor.tu-dinero::before {
+				  		color: @tudinero_background;
+				  		.block-before-autor();
+					}
+					.field--name-field-autor.sociedad::before {
+				  		color: @sociedad_background;
+				  		.block-before-autor();
 					}
 				}
 				.field--type-text-with-summary{

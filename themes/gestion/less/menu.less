@@ -8,6 +8,9 @@ header.container{
 .navbar-default{
 	border:none;
 	background-color: #fff;
+	nav{
+		background-color: #000;
+	}
 	@media (min-width: 768px){
 		padding:0;
 	}
@@ -57,6 +60,12 @@ header.container{
 		width: 100%;
 		background-color: #000;
 		text-transform: uppercase;
+		float:none;
+		position: relative;
+	    margin: 0 auto;
+	    @media (min-width: 1200px){
+			.container();
+		}
 		@media (max-width: 767px){
 			margin: 7.5px 0px;
 		}
@@ -82,12 +91,29 @@ header.container{
 			}
 		}
 		>li:nth-child(1){
+			width:auto;
+			@media (min-width: 768px){
+				position: absolute;	
+				left:15px;
+			}
+			@media (min-width: 1200px){
+				position: absolute;	
+				left:0;
+			}
+			>a, >a:visited{
+				color:#fff;	
+			}
+			>a:focus, >a:hover, >a:active{
+				color:@blue_color;	
+			}
+		}
+		>li:nth-child(2){
 			>a, >a:visited{
 				background-color: @red_color;
 				color:#fff;	
 			}
 			>a:focus, >a:hover, >a:active{
-				background-color: #000;
+				background-color: @red_color_hover;
 				color:#fff;	
 			}
 			ul{
@@ -97,13 +123,13 @@ header.container{
 				}
 			}
 		}
-		>li:nth-child(2){
+		>li:nth-child(3){
 			>a, >a:visited{
 				background-color: @blue_color;
 				color:#fff;	
 			}
 			>a:focus, >a:hover, >a:active{
-				background-color: #000;
+				background-color: @blue_color_hover;
 				color:#fff;	
 			}
 			ul{
@@ -113,13 +139,13 @@ header.container{
 				}
 			}
 		}
-		>li:nth-child(3){
+		>li:nth-child(4){
 			>a, >a:visited{
 				background-color: @brown_color;	
 				color:#fff;
 			}
 			>a:focus, >a:hover, >a:active{
-				background-color: #000;
+				background-color: @brown_color_hover;
 				color:#fff;	
 			}
 			ul{
