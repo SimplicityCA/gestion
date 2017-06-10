@@ -1,25 +1,18 @@
-
-
 #block-views-block-businesses-homepage-block{
 	div[data-history-node-id="40"]{
 		.field--name-node-title{
 			background-color: @brown_color;
-			padding-left:5px;
+			.padding-title();
 			h2{
-			    padding-top: 10px;
-				padding-bottom: 10px;
-				text-transform: uppercase;
-				@media (max-width: 768px){
-					padding-top: 5px;
-					padding-bottom: 5px;
-				}
+			    .h2-section-title();
 			}
 			a{
-				color:#fff;
-				text-decoration: none;
-				display:block;
+				.anchor-section-title();
 			}
 		}
+	}
+	.view-content{
+		.space-title-content();
 	}
 	.views-row{
 		.make-md-column(6);
@@ -36,7 +29,7 @@
 				    width:100%;
 				    background-color: fade(@brown_color,80%);
 				}
-				padding-left: 5px;
+				.padding-title();
 				background-color: @brown_color;
 			    span{
 			    	a{

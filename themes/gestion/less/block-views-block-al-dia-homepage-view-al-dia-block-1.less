@@ -1,27 +1,19 @@
-
-
 #block-views-block-al-dia-homepage-view-al-dia-block-1{
 	div[data-history-node-id="39"]{
 		.field--name-node-title{
 			background-color: @red_color;
-			padding-left:5px;
+			.padding-title();
 			h2{
-			    padding-top: 10px;
-				padding-bottom: 10px;
-				text-transform: uppercase;
-				@media (max-width: 768px){
-					padding-top: 5px;
-					padding-bottom: 5px;
-				}
+			    .h2-section-title();
 			}
 			a{
-				color:#fff;
-				text-decoration: none;
-				display:block;
+				.anchor-section-title();
 			}
 		}
 	}
-
+	.view-content{
+		.space-title-content();
+	}
 	.views-row{
 		float: left;
 	    .make-md-column(4);
@@ -46,7 +38,7 @@
 	    		max-width:94.5%;
 				background-color: fade(@red_color,80%);
     		}
-    		padding-left:5px;
+    		.padding-title();
 			background-color: @red_color;
     		span {	
     			a{

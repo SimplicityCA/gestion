@@ -1,24 +1,13 @@
-
-
 //#block-views-block-analisis-homepage-view-block-1{
 	div[data-history-node-id="38"]{
 		.field--name-node-title{
 			background-color: @blue_color;
-			padding-left:5px;
+			.padding-title();
 			h2{
-				margin-bottom:0;
-			    padding-top: 10px;
-				padding-bottom: 10px;
-				text-transform: uppercase;
-				@media (max-width: 768px){
-					padding-top: 5px;
-					padding-bottom: 5px;
-				}
+				.h2-section-title();
 			}
 			a{
-				color:#fff;
-				text-decoration: none;
-				display:block;
+				.anchor-section-title();
 			}
 		}
 	}
@@ -26,7 +15,7 @@
 		.block-title{
 			.make-sm-column(4);
 			.make-xs-column(12);
-			padding-left:5px;
+			.padding-title();
 			padding-right:0px;
 			text-transform: uppercase;
 			color: @blue_color;
@@ -83,7 +72,7 @@
 					h2{
 						margin-top:0;
 						margin-bottom:0;
-						padding-left:5px;
+						.padding-title();
 						a{
 							color:#fff;
 							font-size:0.5em;
@@ -98,37 +87,27 @@
 					}
 					div[about$="/sociedad"]{
 						h2{
-							background-color: @sociedad_background;
-							padding-left:5px;
-							text-transform: uppercase;
+							.section-name-slider(@sociedad_background);
 						}
 					}
 					div[about$="/tu-dinero"]{
 						h2{
-							background-color: @tudinero_background;
-							padding-left:5px;
-							text-transform: uppercase;
+							.section-name-slider(@tudinero_background);
 						}
 					}
 					div[about$="/economia-y-finanzas"]{
 						h2{
-							background-color: @economia_background;
-							padding-left:5px;
-							text-transform: uppercase;
+							.section-name-slider(@economia_background);
 						}
 					}
 					div[about$="/estrategia"]{
 						h2{
-							background-color: @estrategia_background;
-							padding-left:5px;
-							text-transform: uppercase;
+							.section-name-slider(@estrategia_background);
 						}
 					}
 					div[about$="/investigacion"]{
 						h2{
-							background-color: @investigacion_background;
-							padding-left:5px;
-							text-transform: uppercase;
+							.section-name-slider(@investigacion_background);
 						}
 					}
 					.field--name-field-icono{
@@ -185,12 +164,7 @@
 					}
 				}
 				.field--type-text-with-summary{
-					background-color: #fff;
-					color:#000;
-					opacity:0.7;
-					margin-top:5px;
-					width: 50%;
-					padding-left:10px;
+					.summary-slider();
 					@media (max-width: 767px){
 						display:none;
 					}
