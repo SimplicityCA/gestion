@@ -18,4 +18,9 @@ jQuery( document ).ready(function() {
   jQuery("#homePageCarousel .node--type-article .teaser-field-group .title-and-author-wrapper .field--name-field-autor").each(function(){
   	jQuery(this).addClass(tags[i++]);
   });
+//move h2 search
+var h2search=jQuery('.path-search h2');
+jQuery('.path-search .region-content').prepend(h2search[1]);
+// h2search.prepend('region-content');
+
 });
