@@ -1,0 +1,89 @@
+.seccion-vida-empresarial{
+	.region-header{
+		background-color: @brown_color;
+		.padding-title();
+		h1{
+			.h1-landing-title();
+		}
+	}
+
+	.region-content{
+		display: inline-block;
+		.space-title-content();
+	}
+	
+	#block-firstcontentadseccionvidaempresarial, #block-secondcontentadseccionvidaempresarial, #block-thirdcontentadseccionvidaempresarial{
+		.landings-ad-section();
+	}
+
+	#block-vermasarticulosseccionvidaempresarial{
+		.button-more-articles(@brown_color;@brown_color_hover);
+	}
+
+	#block-views-block-vida-empresarial-landing-section-first-block, #block-views-block-vida-empresarial-landing-section-second-block, #block-views-block-vida-empresarial-landing-section-second-block{
+		.views-row{
+			float: left;
+		    .make-md-column(4);
+		    .make-xs-column(12);
+		    .image-and-title-wrapper{
+		    	position: relative;
+		    	margin-bottom:5px;
+		    	.field--name-field-image{
+					position:relative;
+					z-index:0;
+					img{
+						width:100%;
+					}
+				}
+				.field--name-node-title{
+					width:100%;
+					@media (max-width: 768px){
+						line-height: 1.2em;
+					}
+					@media (min-width: 991px){
+						position: absolute;
+			    		z-index: 1;
+			    		bottom:20px;
+			    		
+						background-color: fade(@brown_color,80%);
+		    		}
+		    		@media (min-width: 1080px){
+		    			position: absolute;
+			    		z-index: 1;
+			    		bottom:20px;
+						background-color: fade(@brown_color,80%);
+		    		}
+		    		.padding-title();
+					background-color: @brown_color;
+		    		span {	
+		    			a{
+		    				color:#fff;
+			    			text-decoration: none;
+		    			}
+		    		}
+				}	
+		    }	
+		}
+
+		.views-row:nth-child(1){
+			padding-left:0;
+			@media (max-width: 991px){
+				padding-right:0;
+			}
+		}
+		.views-row:nth-child(2){
+			padding-left:7.5px;
+			padding-right:7.5px;
+			@media (max-width: 991px){
+				padding-right:0;
+				padding-left:0;
+			}
+		}
+		.views-row:nth-child(3){
+			padding-right:0;
+			@media (max-width: 991px){
+				padding-left:0;
+			}
+		}
+	}
+}

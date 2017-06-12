@@ -1,40 +1,53 @@
-.view-landing-section-carousels{
-	.view-header{
-		display:none;
-	}
-}
-
-#block-firstcontentadseccionanalisis, #block-secondcontentadseccionanalisis, #block-thirdcontentadseccionanalisis, #block-fourthcontentadseccionanalisis, #block-fifthcontentadseccionanalisis{
-	width:728px;
-	height:90px;
-	margin: 0 auto;
-	background-color: #efefef;
-	margin-top:10px;
-	margin-bottom:10px;
-	@media (max-width: 1042px){
-		width:100%;
-
-	}
-}
-
-#block-vermasarticulosseccionanalisis{
-	text-align: center;
-	.block-title{
-		display: none;
-	}
-	.block-content--type-basic{
+.seccion-analisis{
+	.region-header{
 		background-color: @blue_color;
-		padding-left:5px;
-		p{
-			margin-bottom:0;
-		    padding-top: 10px;
-			padding-bottom: 10px;
-			text-transform: capitalize;
-		}
-		a{
-			color:#fff;
-			text-decoration: none;
-			display:block;
+		.padding-title();
+		h1{
+			.h1-landing-title();
 		}
 	}
+	.view-landing-section-carousels{
+		.view-header{
+			display:none;
+		}
+	}
+
+	#estrategiaCarousel{
+		.field--name-field-autor::before {
+	  		color: @estrategia_background;
+	  		.block-before-autor();
+		}
+	}
+	#investigacionCarousel{
+		.field--name-field-autor::before {
+	  		color: @investigacion_background;
+	  		.block-before-autor();
+		}
+	}
+	#economiaFinanzasCarousel{
+		.field--name-field-autor::before {
+	  		color: @economia_background;
+	  		.block-before-autor();
+		}
+	}
+	#tuDineroCarousel{
+		.field--name-field-autor::before {
+	  		color: @tudinero_background;
+	  		.block-before-autor();
+		}
+	}
+	#sociedadCarousel{
+		.field--name-field-autor::before {
+	  		color: @sociedad_background;
+	  		.block-before-autor();
+		}
+	}
+
+	#block-firstcontentadseccionanalisis, #block-secondcontentadseccionanalisis, #block-thirdcontentadseccionanalisis, #block-fourthcontentadseccionanalisis, #block-fifthcontentadseccionanalisis{
+		.landings-ad-section();
+	}
+
+	#block-vermasarticulosseccionanalisis{
+		.button-more-articles(@blue_color;@blue_color_hover);
+	}	
 }

@@ -59,4 +59,54 @@
 .space-title-content(){
 	margin-top:10px;
 }
-										
+
+.h1-landing-title(){
+    padding-top: 10px;
+	text-transform: uppercase;
+	color: #fff;
+	@media (max-width: 768px){
+		padding-top: 5px;
+	}
+}
+
+.landings-ad-section(){
+	width:728px;
+	height:90px;
+	margin: 0 auto;
+	background-color: #efefef;
+	margin-top:30px;
+	margin-bottom:30px;
+	@media (max-width: 1042px){
+		width:100%;
+	}
+	@media (max-width: 768px){
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+}
+
+.button-more-articles(@background-color; @background-color-hover){
+	text-align: center;
+	margin-bottom:10px;
+	.block-title{
+		display: none;
+	}
+	.block-content--type-basic{
+		p{
+			text-transform: capitalize;
+		}
+		a, a:visited{
+		    color: #fff;
+		    text-decoration: none;
+		    display: inline-block;
+		    background-color: @background-color;
+		    padding: 10px;
+		    @media (max-width: 768px){
+				display: block;
+			}
+		}
+		a:hover, a:focus, a:active{
+			background-color: @background-color-hover;
+		}
+	}
+}									
