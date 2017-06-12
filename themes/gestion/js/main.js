@@ -11,7 +11,7 @@ jQuery( document ).ready(function() {
   jQuery("#homePageCarousel .node--type-article .teaser-field-group .field--name-field-tags > .field--item > div > h2 > a").each(function(){
   	if(jQuery(this).attr('href')!= "/analisis"){
   		//jQuery(".field--name-field-autor").addClass(jQuery(this).attr('href').substring(1));
-  		tags[i++] = jQuery(this).attr('href').substring(1);
+  		tags[i++] = jQuery(this).attr('href').substring(1).replace("gestion/","");
   	}
   });
   i = 0;
@@ -26,13 +26,12 @@ jQuery( document ).ready(function() {
     var i = 0;
     jQuery(".page-node-type-article .node--type-article .field--name-field-tags > .field--item").each(function(){
         //jQuery(".field--name-field-autor").addClass(jQuery(this).attr('href').substring(1));
-        tags[i++] = jQuery(this).attr('resource').substring(1);
+        tags[i++] = jQuery(this).attr('resource').substring(1).replace("gestion/","");
     });
     for(var i=0; i<tags.length;i++){
       jQuery(".node--type-article").addClass(tags[i]);
     }
-    console.log(tags);
-    console.log(jQuery(".node--type-article").hasClass("analisis"));
+
     if(!jQuery(".node--type-article").hasClass("analisis")){
       jQuery(".field--name-dynamic-block-fieldnode-secciones-block-field").hide();
     }
