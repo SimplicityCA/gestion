@@ -1,0 +1,27 @@
+.main-container{
+	
+	@media (max-width: 1200px){
+		width:100%;
+		padding-left:30px;
+		padding-right:30px;
+	}
+	@media (max-width: 480px){
+		width:100%;
+		padding-left:15px;
+		padding-right:15px;
+	}
+
+	.row {
+		> section {
+
+			.make-sm-column(12);
+			.make-md-column(9);
+		}
+
+		> aside {
+			.make-sm-column(12);
+			.make-md-column(3);
+		}
+	}
+	
+}

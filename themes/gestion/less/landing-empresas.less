@@ -1,0 +1,111 @@
+.seccion-empresas{
+	.region-header{
+		background-color: @brown_color;
+		.padding-title();
+		h1{
+			.h1-landing-title();
+		}
+	}
+
+	.region-content{
+		display: inline-block;
+		.space-title-content();
+	}
+	
+	#block-firstcontentadseccionempresas, #block-secondcontentadseccionempresas{
+		.landings-ad-section();
+	}
+
+	#block-vermasarticulosseccionempresas{
+		.button-more-articles(@brown_color;@brown_color_hover);
+	}
+
+	#block-views-block-empresas-landing-section-first-block{
+		.views-field-title{
+			a, a:visited{
+				text-decoration: none;
+				font-size: 20px;
+				color: #000;
+				font-weight:600;
+			}
+			a:hover, a:focus, a:active{
+				color: @brown_color;
+			}
+		} 
+		.views-field-field-subtitulo{
+			color:#000;
+		} 
+		.views-field-field-url{
+			margin-top:5px;
+			a, a:visited{
+				text-decoration: none;
+				color:#000;
+			}
+			a:hover, a:focus, a:active{
+				color: @brown_color;
+			}
+		}
+
+		.views-field-field-image{
+			img{
+				margin: 0 auto;
+			}
+		}
+	}
+
+	#block-views-block-empresas-landing-section-second-block{
+		.views-row{
+			.make-md-column(4);
+		    .make-xs-column(12);
+			.views-field-title{
+				a, a:visited{
+					text-decoration: none;
+					font-size: 14px;
+					color: #000;
+					font-weight:600;
+				}
+				a:hover, a:focus, a:active{
+					color: @brown_color;
+				}
+			} 
+			.views-field-field-subtitulo{
+				color:#000;
+			} 
+			.views-field-field-url{
+				margin-top:5px;
+				a, a:visited{
+					text-decoration: none;
+					color:#000;
+				}
+				a:hover, a:focus, a:active{
+					color: @brown_color;
+				}
+			}
+			@media (max-width: 991px){
+				margin-top:10px;
+			}	
+		}
+
+		.views-row:nth-child(1){
+			padding-left:0;
+			@media (max-width: 991px){
+				padding-right:0;
+			}
+		}
+		.views-row:nth-child(2){
+			padding-left:7.5px;
+			padding-right:7.5px;
+			@media (max-width: 991px){
+				padding-right:0;
+				padding-left:0;
+			}
+		}
+		.views-row:nth-child(3){
+			padding-right:0;
+			@media (max-width: 991px){
+				padding-left:0;
+			}
+		}
+		
+	}
+}

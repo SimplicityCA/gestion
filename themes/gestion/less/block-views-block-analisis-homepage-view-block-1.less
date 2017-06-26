@@ -1,0 +1,178 @@
+//#block-views-block-analisis-homepage-view-block-1{
+	div[data-history-node-id="38"]{
+		.field--name-node-title{
+			background-color: @blue_color;
+			.padding-title();
+			h2{
+				.h2-section-title();
+			}
+			a{
+				.anchor-section-title();
+			}
+		}
+	}
+	#block-views-block-secciones-view-secciones-block{
+		.block-title{
+			.make-sm-column(4);
+			.make-xs-column(12);
+			.padding-title();
+			padding-right:0px;
+			text-transform: uppercase;
+			color: @blue_color;
+		}
+		.form-group{
+			.make-sm-column(8);
+			.make-xs-column(12);
+			padding:0;
+			.view-display-id-secciones_block{
+				float:right;
+				@media (max-width: 767px){
+					float:left;
+					padding-bottom: 7px;
+					padding-top: 0px;
+				}
+				padding-top: 7px;
+				.views-row{
+					float:left;
+				}
+			}
+			
+		}
+	}
+	.view-content{
+		#homePageCarousel, #sociedadCarousel, #estrategiaCarousel, #tuDineroCarousel, #investigacionCarousel, #economiaFinanzasCarousel{
+			.carousel-control{
+				width: 0%;
+			}
+			.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+				margin-left: 0px;	
+			}
+			.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next{
+				margin-right: 0px;	
+			}
+			.carousel-inner{
+				/*min-height:450px;
+				max-height:450px;*/
+			}
+			div[resource$="/analisis"]{
+				display:none;
+			}
+			.field--name-field-image{
+				width: 100%;
+			    z-index: -1;
+			    position: relative;
+			    top: 0;
+			    padding: 0;
+			}
+			.teaser-field-group{
+				position: absolute;
+				top:0;
+				width:100%;
+				.field--item{
+					h2{
+						margin-top:0;
+						margin-bottom:0;
+						.padding-title();
+						a{
+							color:#fff;
+							font-size:0.5em;
+							text-decoration: none;
+							@media (max-width: 767px){
+								font-size:0.3em;
+							}
+							@media (max-width: 991px){
+								font-size:0.4em;
+							}
+						}
+					}
+					div[about$="/sociedad"]{
+						h2{
+							.section-name-slider(@sociedad_background);
+						}
+					}
+					div[about$="/tu-dinero"]{
+						h2{
+							.section-name-slider(@tudinero_background);
+						}
+					}
+					div[about$="/economia-y-finanzas"]{
+						h2{
+							.section-name-slider(@economia_background);
+						}
+					}
+					div[about$="/estrategia"]{
+						h2{
+							.section-name-slider(@estrategia_background);
+						}
+					}
+					div[about$="/investigacion"]{
+						h2{
+							.section-name-slider(@investigacion_background);
+						}
+					}
+					.field--name-field-icono{
+						display:none;
+					}	
+				}
+				.title-and-author-wrapper{
+					background-color: #000;
+					color:#fff;
+					padding-bottom:5px;
+					width: 100%;
+					@media (max-width: 767px){
+						width: 100%;
+					}
+					.field--name-node-title{
+						h2{
+							font-weight: 600;
+							line-height: 0.7em;
+							@media (max-width: 767px){
+								line-height:0.4em;
+							}
+						}
+					}
+					.field--name-field-autor{
+						margin-top:3px;
+						padding-left:10px;
+						text-transform: uppercase;
+						@media (max-width: 767px){
+							font-size:0.7em;
+						}
+						@media (max-width: 991px){
+							font-size:0.8em;
+						}
+					}
+					.field--name-field-autor.estrategia::before {
+				  		color: @estrategia_background;
+				  		.block-before-autor();
+					}
+					.field--name-field-autor.investigacion::before {
+				  		color: @investigacion_background;
+				  		.block-before-autor();
+					}
+					.field--name-field-autor.economia-y-finanzas::before {
+				  		color: @economia_background;
+				  		.block-before-autor();
+					}
+					.field--name-field-autor.tu-dinero::before {
+				  		color: @tudinero_background;
+				  		.block-before-autor();
+					}
+					.field--name-field-autor.sociedad::before {
+				  		color: @sociedad_background;
+				  		.block-before-autor();
+					}
+				}
+				.field--type-text-with-summary{
+					.summary-slider();
+					@media (max-width: 767px){
+						display:none;
+					}
+					@media (max-width: 991px){
+						font-size:0.9em;
+					}
+				}
+			}
+		}
+	}
+//}

@@ -1,0 +1,132 @@
+.page-node-type-article{
+	.page-header{
+		display: none;
+	}
+	.field--name-dynamic-block-fieldnode-secciones-block-field{
+		.field--label{
+			.h2-section-title();
+			.make-sm-column(4);
+			.make-xs-column(12);
+			.padding-title();
+			padding-right:0px;
+			text-transform: uppercase;
+			color: @blue_color;
+		}
+	}
+	.view-display-id-secciones_block{
+				float:right;
+				@media (max-width: 767px){
+					float:left;
+					padding-bottom: 7px;
+					padding-top: 0px;
+				}
+				padding-top: 7px;
+				.views-row{
+					float:left;
+				}
+			}
+	.field--name-taxonomy-term-title{
+		margin-top:10px;
+	    text-transform: uppercase;
+	    color: white;
+	    display: inline-flex;
+	    width: 100%;
+	    span a {
+	    	color: white;
+	    	text-decoration: none;
+	    }
+	}
+	.node--type-article-title{
+	    margin-bottom: 0;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	    text-transform: uppercase;
+	    font-size: 30px;
+	    font-weight: inherit;
+	    padding-left: 5px;
+	    font-weight: bold;
+	}
+	.analisis{
+			.node--type-article-title{
+			background-color:@blue_color !important;
+		}	
+	}
+	.economia-y-finanzas{
+		.field--name-taxonomy-term-title{
+	    	background-color:@economia_background;
+		}
+			.field--name-field-autor::before{
+				color: @economia_background;
+			  	content: "▮";
+	}
+	}
+	.sociedad{
+		.field--name-taxonomy-term-title{
+	    	background-color:@sociedad_background;
+		}
+			.field--name-field-autor::before{
+				color: @sociedad_background;
+			  	content: "▮";
+	}
+	}
+	.estrategia{
+		.field--name-taxonomy-term-title{
+	    	background-color:@estrategia_background;
+		}
+			.field--name-field-autor::before{
+				color: @estrategia_background;
+			  	content: "▮";
+	}
+	}
+	.tu-dinero{
+		.field--name-taxonomy-term-title{
+	    	background-color:@tudinero_background;
+		}
+			.field--name-field-autor::before{
+				color: @tudinero_background;
+			  	content: "▮";
+	}
+	}
+	.investigacion{
+		.field--name-taxonomy-term-title{
+	    	background-color:@investigacion_background;
+		}
+			.field--name-field-autor::before{
+				color: @investigacion_background;
+			  	content: "▮";
+	}
+	}
+	.al-dia{
+		.field--name-taxonomy-term-title{
+	    	background-color:@red_color;
+		}
+		.field--name-field-autor::before{
+				color: @red_color;
+			  	content: "▮";
+		}	
+	}
+	h1{
+		background-color: black;
+		color: white;
+		font-weight: bold;
+		margin: 0;
+		@media (max-width: 768px){
+				line-height: 1.2em;
+				font-size: 20px;
+			}
+
+	}
+	.field--name-field-autor{
+		background-color: black;
+		color: white;
+		font-size: 25px;
+		margin-bottom: 10px;
+		@media (max-width: 768px){
+				line-height: 1.2em;
+				font-size: 15px;
+			}
+	}
+	// .field--type-text-with-summary{
+	// 	margin-top: 10px;
+	// }	  		
+}

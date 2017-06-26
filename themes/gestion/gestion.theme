@@ -5,3 +5,10 @@
  *
  * Place your custom PHP code in this file.
  */
+function gestion_preprocess_html(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $path_alias = substr($path_alias, 1);
+  $path_alias_class = str_replace('/', '-', $path_alias);
+  $variables['node_path_class'] = $path_alias_class;
+}
