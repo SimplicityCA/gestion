@@ -8,7 +8,20 @@
 function gestion_preprocess_html(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $page = \Drupal::request()->getQueryString();
+  $params_class = "";
   $path_alias = substr($path_alias, 1);
+  $pages_to_add_page_param_class = array('economia-y-finanzas', 'sociedad', 'estrategia', 'tu-dinero', 'investigacion');
+  if (in_array($path_alias, $pages_to_add_page_param_class)) {
+    $condition1 = ($page === NULL);
+    $condition2 = (strpos($page, 'page=0') !== false);
+    if ($condition1 || $condition2) {
+      $params_class = 'page0';
+    } else {
+      $params_class = $page;
+    }
+  }
   $path_alias_class = str_replace('/', '-', $path_alias);
   $variables['node_path_class'] = $path_alias_class;
+  $variables['params_class'] = $params_class;
 }
