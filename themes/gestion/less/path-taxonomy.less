@@ -4,37 +4,54 @@
 		margin-top:10px;
 	}
 	.views-row{
-		.field--name-field-tags{
-			display:none;
-		}
-
-		.field--name-field-autor{
-			display:none;
-		}
-
-		.field--name-node-title{
-			margin-top:15px;
-			div{
-				font-size:16px;
-				margin-top:0px;
-				font-weight:600;
-				a, a:visited{
-					text-decoration: none;
-					color: #000;
+		.ds-2col{ 
+			margin-top:10px;
+			> .group-left {
+		    float: left;
+		    width: 30%;
+		    @media (max-width: 767px){
+					 width: 100%;
 				}
-				a:hover, a:focus, a:active{
-					color: @blue_color;
+				img{
+					width: 100%;
 				}
 			}
+			> .group-right {
+		    float: left;
+		    width: 70%;
+		    padding-left:15px;
+		    @media (max-width: 767px){
+					width: 100%;
+					padding-left:0px;
+				}
+
+				.field--name-node-title{
+					h3{
+						a{
+							color:#000;
+							text-decoration: none;
+						}
+						a:hover, a:focus, a:active{
+							color: @blue_color;
+						}
+						@media (min-width: 768px){
+							margin-top:0px;
+						}
+					}
+				}
+				.field--name-node-link{
+					display:none;
+				}
+			}
 		}
-		.field--name-node-link.field--type-ds{
-			a, a:visited{
-				color: @blue_color;
-				text-decoration: none;
-			}
-			a:hover, a:focus, a:active{
-				color: @blue_color_hover;
-			}
+	}
+	#block-views-block-secciones-view-secciones-block{
+		.block-title{
+			display:none;
+		}
+		.view-secciones-view{
+			float:left;
+			padding-bottom: 7px;
 		}
 	}
 }
@@ -42,8 +59,8 @@
 .path-taxonomy.al-dia{
 	.region-header{
 		background-color: @red_color;
-		.padding-title();
 		h1{
+			.padding-title();
 			.h1-landing-title();
 		}
 	}
@@ -51,8 +68,8 @@
 .path-taxonomy.analisis{
 	.region-header{
 		background-color: @blue_color;
-		.padding-title();
 		h1{
+			.padding-title();
 			.h1-landing-title();
 		}
 	}
@@ -61,8 +78,8 @@
 .path-taxonomy.reportajes-empresariales, .path-taxonomy.vida-empresarial{
 	.region-header{
 		background-color: @brown_color;
-		.padding-title();
 		h1{
+			.padding-title();
 			.h1-landing-title();
 		}
 	}
@@ -71,14 +88,22 @@
 .path-taxonomy.economia-y-finanzas{
 	.region-header{
 		background-color: @economia_background;
-		.padding-title();
 		h1{
+			.padding-title();
 			.h1-landing-title();
 		}
 	}
 	.field--name-field-icono{
 		.field--label{
 			display:none;	
+		}
+	}
+	#block-views-block-most-recent-article-economia-y-finanzas{
+		.recent-article(@economia_background)
+	}
+	.view-taxonomy-term{
+		.field--name-taxonomy-term-title{
+			display: none;
 		}
 	}
 }
@@ -86,14 +111,23 @@
 .path-taxonomy.sociedad{
 	.region-header{
 		background-color: @sociedad_background;
-		.padding-title();
 		h1{
+			.padding-title();
 			.h1-landing-title();
 		}
 	}
 	.field--name-field-icono{
 		.field--label{
 			display:none;	
+		}
+	}
+
+	#block-views-block-most-recent-article-sociedad{
+		.recent-article(@sociedad_background)
+	}
+	.view-taxonomy-term{
+		.field--name-taxonomy-term-title{
+			display: none;
 		}
 	}
 }
@@ -101,36 +135,52 @@
 .path-taxonomy.investigacion{
 	.region-header{
 		background-color: @investigacion_background;
-		.padding-title();
 		h1{
+			.padding-title();
 			.h1-landing-title();
 		}
 	}
 	.field--name-field-icono{
 		.field--label{
 			display:none;	
+		}
+	}
+	#block-views-block-most-recent-article-investigacion{
+		.recent-article(@investigacion_background)
+	}
+	.view-taxonomy-term{
+		.field--name-taxonomy-term-title{
+			display: none;
 		}
 	}
 }
 .path-taxonomy.tu-dinero{
 	.region-header{
 		background-color: @tudinero_background;
-		.padding-title();
 		h1{
+			.padding-title();
 			.h1-landing-title();
 		}
 	}
 	.field--name-field-icono{
 		.field--label{
 			display:none;	
+		}
+	}
+	#block-views-block-most-recent-article-tu-dinero{
+		.recent-article(@tudinero_background)
+	}
+	.view-taxonomy-term{
+		.field--name-taxonomy-term-title{
+			display: none;
 		}
 	}
 }
 .path-taxonomy.estrategia{
 	.region-header{
 		background-color: @estrategia_background;
-		.padding-title();
 		h1{
+			.padding-title();
 			.h1-landing-title();
 		}
 	}
@@ -138,5 +188,23 @@
 		.field--label{
 			display:none;	
 		}
+	}
+	#block-views-block-most-recent-article-estrategia{
+		.recent-article(@estrategia_background)
+	}
+	.view-taxonomy-term{
+		.field--name-taxonomy-term-title{
+			display: none;
+		}
+	}
+}
+body[class$="page0"]{
+	.view-taxonomy-term{
+		.views-row:first-child{
+			display:none;
+		}
+	}
+	#block-views-block-most-recent-article-economia-y-finanzas, #block-views-block-most-recent-article-sociedad, #block-views-block-most-recent-article-tu-dinero, #block-views-block-most-recent-article-estrategia, #block-views-block-most-recent-article-investigacion{
+		display:block !important;
 	}
 }

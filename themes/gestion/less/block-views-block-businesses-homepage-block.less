@@ -2,9 +2,9 @@
 	div[data-history-node-id="40"]{
 		.field--name-node-title{
 			background-color: @brown_color;
-			.padding-title();
 			h2{
-			    .h2-section-title();
+				.padding-title();
+		    .h2-section-title();
 			}
 			a{
 				.anchor-section-title();
@@ -38,9 +38,15 @@
 				    	text-decoration: none;
 			    	}
 			    }
+			}
+			.field--name-field-image{
+				position:relative;
+				z-index:0;
+				img{
+					width:100%;
+				}
 			}	
 		}
-		
 	}
 	.views-row:nth-child(2n){
 		padding-right:0;

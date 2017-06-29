@@ -47,6 +47,16 @@
 	padding-left:10px;
 }
 
+.summary-aldia(){
+	background-color: #fff;
+	color:#000;
+	opacity:0.7;
+	margin-top:5px;
+	width: 100%;
+	padding-left:10px;
+	padding-right:10px;
+}
+
 .section-name-slider(@background-color){
 	padding-left:5px;
 	text-transform: uppercase;	
@@ -111,4 +121,56 @@
 			background-color: @background-color-hover;
 		}
 	}
-}									
+}	
+
+.recent-article(@color){
+	display:none;
+	.node--type-article-title{
+			display:none;
+		}
+		.field--name-field-tags{
+			.padding-title();
+    	background-color:@color;
+    	a{
+    		color: #fff;
+    		text-decoration: none;
+    	}
+		}
+		.field--name-field-autor::before{
+				color: @color;
+		  	content: "▮";
+		}
+		.title-and-author-wrapper{
+			background-color: black;
+			.padding-title();
+			.field--name-node-title{
+				h3{
+					font-weight: bold;
+					margin: 0;
+					@media (max-width: 768px){
+						line-height: 1.2em;
+						font-size: 20px;
+					}
+					a{
+						color: white;
+						text-decoration: none;	
+					}
+				}		
+			}
+			.field--name-field-autor{
+				color: white;
+				font-size: 22px;
+				margin-bottom: 10px;
+				@media (max-width: 768px){
+						line-height: 1.2em;
+						font-size: 15px;
+					}
+			}
+			.field--type-text-with-summary{
+				display:none;
+			}
+			.field--name-field-icono{
+				display:none;
+			}
+		}
+}								
