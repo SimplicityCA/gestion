@@ -1,18 +1,13 @@
 .seccion-empresas{
 	.region-header{
 		background-color: @brown_color;
-		.padding-title();
 		h1{
+			.padding-title();
 			.h1-landing-title();
 		}
 	}
-
-	.region-content{
-		display: inline-block;
-		.space-title-content();
-	}
 	
-	#block-firstcontentadseccionempresas, #block-secondcontentadseccionempresas{
+	#block-firstcontentadseccionempresas, #block-secondcontentadseccionempresas, #block-thirdcontentadseccionempresas{
 		.landings-ad-section();
 	}
 
@@ -21,10 +16,11 @@
 	}
 
 	#block-views-block-empresas-landing-section-first-block{
+		.space-title-content();
 		.views-field-title{
 			a, a:visited{
 				text-decoration: none;
-				font-size: 20px;
+				font-size: 22px;
 				color: #000;
 				font-weight:600;
 			}
@@ -34,12 +30,16 @@
 		} 
 		.views-field-field-subtitulo{
 			color:#000;
+			p{
+				font-size:20px;
+			}
 		} 
 		.views-field-field-url{
 			margin-top:5px;
 			a, a:visited{
 				text-decoration: none;
 				color:#000;
+				font-size: 20px;
 			}
 			a:hover, a:focus, a:active{
 				color: @brown_color;
@@ -53,16 +53,17 @@
 		}
 	}
 
-	#block-views-block-empresas-landing-section-second-block{
+	#block-views-block-empresas-landing-section-second-block, #block-views-block-empresas-landing-third-block{
 		.views-row{
 			.make-md-column(4);
 		    .make-xs-column(12);
 			.views-field-title{
 				a, a:visited{
 					text-decoration: none;
-					font-size: 14px;
+					font-size: 18px;
 					color: #000;
 					font-weight:600;
+					text-transform: uppercase;
 				}
 				a:hover, a:focus, a:active{
 					color: @brown_color;
@@ -70,6 +71,23 @@
 			} 
 			.views-field-field-subtitulo{
 				color:#000;
+				font-size: 17px;
+				min-height: 50px;
+				max-height:50px;
+				height:50px;
+				@media (max-width: 1100px){
+					min-height: 60px;
+					max-height:60px;
+					height:60px;
+				}
+				@media (max-width: 991px){
+					min-height: 0px;
+					max-height:none;
+					height:auto;
+				}	
+				p{
+					font-size: 17px;
+				}
 			} 
 			.views-field-field-url{
 				margin-top:5px;

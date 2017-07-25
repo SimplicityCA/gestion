@@ -67,7 +67,7 @@
 			.field--name-field-autor::before{
 				color: @sociedad_background;
 			  	content: "▮";
-	}
+		}
 	}
 	.estrategia{
 		.field--name-taxonomy-term-title{
@@ -126,7 +126,34 @@
 				font-size: 15px;
 			}
 	}
-	// .field--type-text-with-summary{
-	// 	margin-top: 10px;
-	// }	  		
+.field--name-field-archivo{
+	.field--label{
+		display: none;
+	}
+	.field--item{
+		.file{	
+			display: inline-block;
+			width: auto;
+			span{
+				display: table;
+				border:none;
+				padding:0px;
+				width: 60px;
+				color: black;
+				text-align: center;
+			}
+			.file-icon{
+				background-image: url(/sites/default/files/file.png);
+			    width: 60px;
+			    height: 60px;
+			    .icon{
+			    	display: none;
+			    }
+			}
+			.file-link{
+				font-size: 12px;
+			}
+		}
+	}
+}	  		
 }

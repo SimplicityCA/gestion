@@ -1,6 +1,9 @@
 
 
-#block-views-block-estadisticas-bottom{
+#block-views-block-estadisticas-bottom-entityqueue{
+	.carousel-control{
+		display: none;
+	}
 	.make-sm-column(6);
 	.make-md-column(5);
 	padding-left:0;
@@ -16,14 +19,18 @@
     	.padding-title();
 	}
 	.node--type-estadistica{
+		margin-left: 7px;
 		background-color: @article_color;
 		@media (min-width: 992px){    
 			width: 23.3%;
 			float:left;
+			margin-left: 6px;
 		}
 		@media (max-width: 991px){    
 			width: 48.8%;
 			float:left;
+			margin-left: 4px;
+			margin-top: 4px;
 		}
 		.field--name-field-valor{
 			color: @number_color;
