@@ -1,6 +1,98 @@
 header.container{
 	width:100%;
 	padding:0;
+	background-color: transparent;
+	&.stuck {
+		position: fixed;
+    	z-index: 100;
+    	@media (max-width: @screen-xs-max) {
+    		background-color: rgba(265,265,265,0.8);
+    	}
+    	.navbar-header {
+    		.region-navigation {
+    			.logo.navbar-btn.pull-left {
+    				display: none;
+    			}
+    		}
+			#block-topblocklogomultiplica {
+				position: absolute;
+				@media (min-width: @screen-sm-min) {
+					top: 0;
+				    right: 10px;
+				    max-width: 20%;
+				    .logo-container {
+				    	max-width: 175px;
+				    }
+				    a.multiplica-logo {
+				    	img {
+			    		    max-width: 100%;
+							margin-top: -14px;
+				    	}
+				    }
+				}
+				a.multiplica-logo {
+					img {
+						@media (max-width: @screen-xs-max) {
+						    -webkit-animation-name: header-multiplica-animation-to-sticky; /* Safari 4.0 - 8.0 */
+						    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+						    animation-name: header-multiplica-animation-to-sticky;
+						    animation-duration: 1s;
+						    width: 175px;
+							float: left;
+						}
+					}
+				}
+			}
+    	}
+    	#navbar-collapse {
+    		.region-navigation-collapsible {
+    			#block-gestion-main-menu {
+    				background-color: rgba(265,265,265,0.8);
+    				@media (min-width: @screen-sm-min) {
+					    -webkit-animation-name: header-animation-to-sticky; /* Safari 4.0 - 8.0 */
+					    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+					    animation-name: header-animation-to-sticky;
+					    animation-duration: 1s;
+					}
+    				ul.menu.nav.navbar-nav {
+				    	@media (max-width: @screen-xs-max) {
+				    		background-color: #000;
+				    	}
+				    	li:first-child {
+				    		a {
+				    			@media (min-width: @screen-sm-min) {
+				    				color: #000;
+				    			}
+				    		}
+				    	}
+    				}
+    			}
+    		}
+    	}
+	}
+	&.stuck-removed {
+		#block-gestion-main-menu {
+			background-color: #000;
+			@media (min-width: @screen-sm-min) {
+				-webkit-animation-name: header-animation-to-normal; /* Safari 4.0 - 8.0 */
+			    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+			    animation-name: header-animation-to-normal;
+			    animation-duration: 1s;
+			}
+		}
+		a.multiplica-logo {
+			img {
+				@media (max-width: @screen-xs-max) {
+				    -webkit-animation-name: header-multiplica-animation-to-normal; /* Safari 4.0 - 8.0 */
+				    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+				    animation-name: header-multiplica-animation-to-normal;
+				    animation-duration: 1s;
+				    width: 66.66666667%;
+					float: right;
+				}
+			}
+		}
+	}
 }
 .navbar.container {
     max-width: 100%;
@@ -8,7 +100,7 @@ header.container{
 .navbar-default{
 	border:none;
 	background-color: #fff;
-	nav{
+	nav {
 		background-color: #000;
 	}
 	@media (min-width: 768px){
@@ -58,7 +150,7 @@ header.container{
 	
 	.navbar-nav{
 		width: 100%;
-		background-color: #000;
+		background-color: transparent;
 		text-transform: uppercase;
 		float:none;
 		position: relative;
@@ -167,4 +259,80 @@ header.container{
 			}
 		}
 	}
+}
+
+//Animation for sticky header
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes header-animation-to-sticky {
+    from {background-color: #000;}
+    to {background-color: rgba(265,265,265,0.8);}
+}
+
+/* Standard syntax */
+@keyframes header-animation-to-sticky {
+    from {background-color: #000;}
+    to {background-color: rgba(265,265,265,0.8);}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes header-animation-to-normal {
+    from {background-color: rgba(265,265,265,0.8);}
+    to {background-color: #000;}
+}
+
+/* Standard syntax */
+@keyframes header-animation-to-normal {
+    from {background-color: rgba(265,265,265,0.8);}
+    to {background-color: #000;}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes header-ul-animation-to-normal {
+    from {background-color: transparent;}
+    to {background-color: #000;}
+}
+
+/* Standard syntax */
+@keyframes header-ul-animation-to-normal {
+    from {background-color: transparent;}
+    to {background-color: #000;}
+}
+//mobile logic
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes header-multiplica-animation-to-sticky {
+    from {
+    	width: 66.66666667%;
+    }
+    to {
+	    width: 175px;
+    }
+}
+
+/* Standard syntax */
+@keyframes header-multiplica-animation-to-sticky {
+    from {
+    	width: 66.66666667%;
+    }
+    to {
+	    width: 175px;
+    }
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes header-multiplica-animation-to-normal {
+    from {
+    	width: 175px;
+    }
+    to {
+    	width: 66.66666667%;
+    }
+}
+
+/* Standard syntax */
+@keyframes header-multiplica-animation-to-normal {
+    from {
+    	width: 175px;
+    }
+    to {
+    	width: 66.66666667%;
+    }
 }

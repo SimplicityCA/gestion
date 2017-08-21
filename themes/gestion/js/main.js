@@ -39,4 +39,86 @@ jQuery( document ).ready(function() {
   var move_title_type_article=title_node_type_article[title_node_type_article.length-1];
   jQuery('.node--type-article').prepend(move_title_type_article);
   jQuery(".field--name-taxonomy-term-title").first().addClass("node--type-article-title");
+
+  //Sticky header functionality
+  let header = jQuery("body header.navbar.navbar-default.container");
+
+  if (jQuery(this).width() > 767) {
+    if (jQuery(this).scrollTop() >= 116)
+    {
+      if (!header.hasClass("stuck")) {
+        header.addClass("stuck");
+        if (header.hasClass("stuck-removed")) {
+          header.removeClass("stuck-removed");
+        }
+      }
+    }
+    else {
+      if (header.hasClass("stuck")) {
+        header.removeClass("stuck");
+        if (!header.hasClass("stuck-removed")) {
+          header.addClass("stuck-removed");
+        }
+      }
+    }
+  } else {
+    if (jQuery(this).scrollTop() >= 8)
+    {
+      if (!header.hasClass("stuck")) {
+        header.addClass("stuck");
+        if (header.hasClass("stuck-removed")) {
+          header.removeClass("stuck-removed");
+        }
+      }
+    }
+    else {
+      if (header.hasClass("stuck")) {
+        header.removeClass("stuck");
+        if (!header.hasClass("stuck-removed")) {
+          header.addClass("stuck-removed");
+        }
+      }
+    }
+  }
+
+  jQuery(window).scroll(function() {
+    let header = jQuery("body header.navbar.navbar-default.container");
+    if (jQuery(this).width() > 767) {
+      if (jQuery(this).scrollTop() >= 116)
+      {
+        if (!header.hasClass("stuck")) {
+          header.addClass("stuck");
+          if (header.hasClass("stuck-removed")) {
+            header.removeClass("stuck-removed");
+          }
+        }
+      }
+      else {
+        if (header.hasClass("stuck")) {
+          header.removeClass("stuck");
+          if (!header.hasClass("stuck-removed")) {
+            header.addClass("stuck-removed");
+          }
+        }
+      }
+    } else {
+      if (jQuery(this).scrollTop() >= 8)
+      {
+        if (!header.hasClass("stuck")) {
+          header.addClass("stuck");
+          if (header.hasClass("stuck-removed")) {
+            header.removeClass("stuck-removed");
+          }
+        }
+      }
+      else {
+        if (header.hasClass("stuck")) {
+          header.removeClass("stuck");
+          if (!header.hasClass("stuck-removed")) {
+            header.addClass("stuck-removed");
+          }
+        }
+      }
+    }
+  });
 });
