@@ -753,6 +753,18 @@ $settings['file_scan_ignore_directories'] = [
 // if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 //   include $app_root . '/' . $site_path . '/settings.local.php';
 // }
+
+/**
+ * Load production override configuration, if available.
+ *
+ * Use this file only on production environment
+ *
+ * Keep this code block at the end of this file to take full effect.
+ */
+if (file_exists($app_root . '/' . $site_path . '/settings.production.php')) {
+  include $app_root . '/' . $site_path . '/settings.production.php';
+}
+
 $databases['default']['default'] = array (
   'database' => 'gestion',
   'username' => 'root',
