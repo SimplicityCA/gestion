@@ -126,34 +126,58 @@
 				font-size: 15px;
 			}
 	}
-.field--name-field-archivo{
-	.field--label{
-		display: none;
-	}
-	.field--item{
-		.file{	
-			display: inline-block;
-			width: auto;
-			span{
-				display: table;
-				border:none;
-				padding:0px;
-				width: 60px;
-				color: black;
-				text-align: center;
-			}
-			.file-icon{
-				background-image: url(/sites/default/files/file.png);
-			    width: 60px;
-			    height: 60px;
-			    .icon{
-			    	display: none;
-			    }
-			}
-			.file-link{
-				font-size: 12px;
+	.field--name-field-archivo{
+		.field--label{
+			display: none;
+		}
+		.field--item{
+			.file{	
+				display: inline-block;
+				width: auto;
+				span{
+					display: table;
+					border:none;
+					padding:0px;
+					width: 60px;
+					color: black;
+					text-align: center;
+				}
+				.file-icon{
+					background-image: url(/sites/default/files/file.png);
+				    width: 60px;
+				    height: 60px;
+				    .icon{
+				    	display: none;
+				    }
+				}
+				.file-link{
+					font-size: 12px;
+				}
 			}
 		}
 	}
-}	  		
+	.field--type-text-with-summary{
+		img{
+			.img-responsive();
+			padding-top:10px;
+			padding-bottom:10px;
+			@media (max-width: 768px){
+				width:100%;
+				max-width:100%;
+			}
+
+		}
+		img.align-left{
+			padding-right:10px;
+		}
+		img.align-right{
+			padding-left:10px;
+		}
+		iframe{
+			@media (max-width: 620px){
+				width:100%;
+				max-width:100%;
+			}
+		}
+	}	  		
 }
