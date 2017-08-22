@@ -5,8 +5,11 @@ header.container{
 	&.stuck {
 		position: fixed;
     	z-index: 100;
+    	border-bottom: 3px solid #000;
+    	border-top: 3px solid #000;
+    	border-radius: 0;
     	@media (max-width: @screen-xs-max) {
-    		background-color: rgba(265,265,265,0.9);
+    		background-color: rgba(265,265,265,0.95);
     	}
     	.navbar-header {
     		.region-navigation {
@@ -48,7 +51,7 @@ header.container{
     	#navbar-collapse {
     		.region-navigation-collapsible {
     			#block-gestion-main-menu {
-    				background-color: rgba(265,265,265,0.9);
+    				background-color: rgba(265,265,265,0.95);
     				@media (min-width: @screen-sm-min) {
 					    -webkit-animation-name: header-animation-to-sticky; /* Safari 4.0 - 8.0 */
 					    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
@@ -166,6 +169,7 @@ header.container{
 		}
 		>li{
 			width:125px;
+			cursor: pointer;
 			@media (max-width: 767px){
 				width:100%;
 			}
@@ -268,24 +272,24 @@ header.container{
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes header-animation-to-sticky {
     from {background-color: #000;}
-    to {background-color: rgba(265,265,265,0.9);}
+    to {background-color: rgba(265,265,265,0.95);}
 }
 
 /* Standard syntax */
 @keyframes header-animation-to-sticky {
     from {background-color: #000;}
-    to {background-color: rgba(265,265,265,0.9);}
+    to {background-color: rgba(265,265,265,0.95);}
 }
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes header-animation-to-normal {
-    from {background-color: rgba(265,265,265,0.9);}
+    from {background-color: rgba(265,265,265,0.95);}
     to {background-color: #000;}
 }
 
 /* Standard syntax */
 @keyframes header-animation-to-normal {
-    from {background-color: rgba(265,265,265,0.9);}
+    from {background-color: rgba(265,265,265,0.95);}
     to {background-color: #000;}
 }
 
