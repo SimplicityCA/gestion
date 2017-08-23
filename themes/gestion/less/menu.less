@@ -12,9 +12,24 @@ header.container{
     		background-color: rgba(265,265,265,0.95);
     	}
     	.navbar-header {
+			@media (max-width: @screen-xs-max) {
+	    		background: url('../assets/logo_small.png');
+    		    background-size: contain;
+			    background-repeat: no-repeat;
+			    background-position-x: 21px;
+			    .navbar-toggle {
+			    	z-index: 10;
+			    }
+			}
+			@media (max-width: @screen-xs) {
+			    background-position-x: 6px;
+			}
     		.region-navigation {
     			.logo.navbar-btn.pull-left {
     				display: none;
+    			}
+    			@media (max-width: @screen-xs-max) {
+    				position: static;
     			}
     		}
 			#block-topblocklogomultiplica {
@@ -38,13 +53,21 @@ header.container{
 					img {
 						@media (max-width: @screen-xs-max) {
 						    -webkit-animation-name: header-multiplica-animation-to-sticky; /* Safari 4.0 - 8.0 */
-						    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+						    -webkit-animation-duration: 0.6s; /* Safari 4.0 - 8.0 */
 						    animation-name: header-multiplica-animation-to-sticky;
-						    animation-duration: 1s;
+						    animation-duration: 0.6s;
 						    width: 175px;
-							float: left;
+							float: none;
 						}
 					}
+				}
+				@media (max-width: @screen-xs-max) {
+	    		    padding: 0;
+				    width: calc(~"100% - 60px");
+				    text-align: center;
+				}
+				@media (max-width: @screen-xs) {
+					width: calc(~"100% - 30px");
 				}
 			}
     	}
@@ -61,10 +84,18 @@ header.container{
     				ul.menu.nav.navbar-nav {
 				    	@media (max-width: @screen-xs-max) {
 				    		background-color: #000;
+				    		margin: 0;
 				    	}
 				    	li:first-child {
+				    		@media (min-width: @screen-sm-min) {
+					    		background: url('../assets/logo_small.png');
+				    		    background-size: contain;
+							    background-repeat: no-repeat;
+							    background-position-x: -10px;
+							}
 				    		a {
 				    			@media (min-width: @screen-sm-min) {
+			    				    padding-left: 45px;
 				    				color: #000;
 				    				font-weight: bold;
     								font-size: 18px;
@@ -308,7 +339,7 @@ header.container{
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes header-multiplica-animation-to-sticky {
     from {
-    	width: 66.66666667%;
+    	width: 25.66666667%;
     }
     to {
 	    width: 175px;
@@ -318,7 +349,7 @@ header.container{
 /* Standard syntax */
 @keyframes header-multiplica-animation-to-sticky {
     from {
-    	width: 66.66666667%;
+    	width: 25.66666667%;
     }
     to {
 	    width: 175px;
