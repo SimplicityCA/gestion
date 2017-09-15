@@ -101,7 +101,12 @@ abstract class SqlBase extends SourcePluginBase implements ContainerFactoryPlugi
       // See if the database info is in state - if not, fallback to
       // configuration.
       if (isset($this->configuration['database_state_key'])) {
-        $this->database = $this->setUpDatabase($this->state->get($this->configuration['database_state_key']));
+        $this->database = $this->setUpDatabase(
+          $this->state->get(
+            $this->configuration['database_state_key'],
+            array()
+          )
+        );
       }
       elseif (($fallback_state_key = $this->state->get('migrate.fallback_state_key'))) {
         $this->database = $this->setUpDatabase($this->state->get($fallback_state_key));
