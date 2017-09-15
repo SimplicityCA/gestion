@@ -9,14 +9,14 @@
 #
 # Usually the ID indicates what we are trying to migrate.
 # In our case, we are migrating nodes of type "program".
-id: article_data
+id: article_data2
 # Human-readable name of the migration for the UI.
 label: Articles and associated data.
 # Migration group.
 #
 # Migration groups allow us to put related migrations under one
 # umbrella so that we can execute or reference them together.
-migration_group: g1
+migration_group: g2
 # Migration tags.
 #
 # Migration tags help us group migrations using tags. In our
@@ -30,7 +30,7 @@ migration_tags:
 dependencies:
   enforced:
     module:
-      - g1_migrate
+      - g2_migrate
 
 source:
   plugin: csv
@@ -47,20 +47,4 @@ source:
   #
   # We can assign hard-coded values to certain properties using constants.
   constants:
-    bool_0: 0
-    bool_1: 1
-    uid_root: 1
-    restricted_html: restricted_html
-
-destination:
-  plugin: 'entity:node'
-  default_bundle: article
-
-process:
-  title: Title
-  sticky: constants/bool_0
-  promote: constants/bool_0
-  uid: constants/uid_root
-  'body/value': Body
-  'body/format': constants/restricted_html
-  field_contenido_historico: constants/bool_1
+    field_contenido_historico: 1
