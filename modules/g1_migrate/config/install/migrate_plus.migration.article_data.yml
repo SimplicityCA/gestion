@@ -1,0 +1,66 @@
+# Migration file for creating "program" nodes from CSV.
+#
+# This file contains much of the information which we
+# used to specify in the "Migration" class in Drupal 7.
+# But why write code if you can write YAML?
+# This is how we declare a Migration the Drupal 8 way.
+
+# Migration ID.
+#
+# Usually the ID indicates what we are trying to migrate.
+# In our case, we are migrating nodes of type "program".
+id: article_data
+# Human-readable name of the migration for the UI.
+label: Articles and associated data.
+# Migration group.
+#
+# Migration groups allow us to put related migrations under one
+# umbrella so that we can execute or reference them together.
+migration_group: g1
+# Migration tags.
+#
+# Migration tags help us group migrations using tags. In our
+# example, we tag all migrations with an "academic program"
+# tag. That way, we can run all academic-program-related migrations
+# using one command.
+migration_tags:
+  - node
+  - article
+
+dependencies:
+  enforced:
+    module:
+      - g1_migrate
+
+source:
+  plugin: csv
+  path: 'public://import/program/article.data.csv'
+  header_row_count: 1
+  keys:
+    - ID
+  fields:
+    ID: Unique identifier for the program as in the data source.
+    Title: Article's title.
+    Body: A description for the article.
+    Author: Author of the article.
+  # Static values for the migration.
+  #
+  # We can assign hard-coded values to certain properties using constants.
+  constants:
+    bool_0: 0
+    bool_1: 1
+    uid_root: 1
+    restricted_html: restricted_html
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: article
+
+process:
+  title: Title
+  sticky: constants/bool_0
+  promote: constants/bool_0
+  uid: constants/uid_root
+  'body/value': Body
+  'body/format': constants/restricted_html
+  field_contenido_historico: constants/bool_1

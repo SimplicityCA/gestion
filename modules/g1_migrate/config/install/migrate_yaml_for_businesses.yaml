@@ -1,0 +1,84 @@
+id: articles_4_20
+label: Import articles 4_20
+migration_groups:
+  - Article Import 4_20
+
+source:
+  plugin: csv
+  # Full path to the file.
+  path: 'public://import/program/businesses_import1.2.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '|'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  keys:
+    - id
+  # Here we identify the columns of interest in the source file. 
+  # Each numeric key is the 0-based index of the column. 
+  # For each column, the key below is the field name assigned to 
+  # the data on import, to be used in field mappings below. 
+  # The value is a user-friendly string for display by the 
+  # migration UI.
+  column_names:
+    0:
+      id: 'Unique Id'
+    1:
+      title: 'Title'
+    2:
+      body: 'Post body'
+    3:
+      field_autor: 'Post author'
+    4:
+      created: 'Creation date'
+    5:
+      changed: 'Changed date'
+    6:
+      field_tags: 'Post tags'
+    7:
+      field_archivo_historico: 'Post pdf'
+    8:
+      field_seccion_impreso: 'Historic Post printed section'
+    9:
+      field_indicadores: 'Post Indicators'
+    10:
+      field_edicion: 'Historical Post edition'
+  constants:
+    bool_0: 0
+    bool_1: 1
+    uid_root: 1
+    restricted_html: restricted_html
+    file_source_uri: http://www.revistagestion.ec/sites/default/files/import/legacy_pdfs
+process:
+  title: title
+  body: body
+  field_autor: field_autor
+  created: created
+  changed: changed
+  field_tags:
+    -
+      plugin: explode
+      delimiter: ', '
+      source: field_tags
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: tags
+      value_key: tid
+  field_archivo_historico: 
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_source_uri
+        - field_archivo_historico
+  field_seccion_impreso: field_seccion_impreso
+  field_indicadores: field_indicadores
+  field_edicion: field_edicion
+  field_contenido_historico: constants/bool_1
+  type:
+    plugin: default_value
+    default_value: empresa
+
+destination:
+  plugin: entity:node
