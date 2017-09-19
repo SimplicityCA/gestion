@@ -46,6 +46,7 @@ header.container{
 				    	img {
 			    		    max-width: 100%;
 							margin-top: -14px;
+							padding: 0 !important;
 				    	}
 				    }
 				}
@@ -58,6 +59,10 @@ header.container{
 						    animation-duration: 0.6s;
 						    width: 175px;
 							float: none;
+						}
+						@media (max-width: @screen-xs-max) {
+							padding: 0 !important;
+							margin: 0 auto !important;
 						}
 					}
 				}
