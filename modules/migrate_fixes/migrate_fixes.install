@@ -1,0 +1,37 @@
+<?php
+use Drupal\Core\Database\Database;
+use Drupal\node\Entity\Node;
+/**
+ * @file
+ * Handle install / uninstall events for the module.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Copies migration source files to the public:// directory.
+ */
+function migrate_fixes_install() {
+  $connection = Database::getConnection();
+
+  // Retrieves a PDOStatement object
+  // http://php.net/manual/en/pdo.prepare.php
+  $sth = $connection->select('node_field_data', 'nfd')
+      ->fields('nfd', array('nid', 'created', 'title', 'type'))
+      ->condition('nfd.created', '1486684800', '>');
+
+  // Execute the statement
+  $data = $sth->execute();
+
+  // Get all the results
+  $results = $data->fetchAll(\PDO::FETCH_OBJ);
+
+  // Iterate results
+  foreach ($results as $row) {
+    if ($row->type == 'article' || $row->type == 'empresa') {
+      $node = \Drupal\node\Entity\Node::load($row->nid);
+      $node->set("field_contenido_historico", 0);
+      $node->save();
+    }
+  }
+}
