@@ -25,3 +25,17 @@ function gestion_preprocess_html(&$variables) {
   $variables['node_path_class'] = $path_alias_class;
   $variables['params_class'] = $params_class;
 }
+
+function gestion_preprocess_search_result(&$variables) {
+  $result = $variables['result'];
+  $timestamp = $result['node']->changed->value;
+  $formatted_date = gmdate("F j, Y - H:i", $timestamp);
+  // $language_name =  \Drupal::languageManager()->getCurrentLanguage()->getName();
+  $language_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if($language_id == "es") {
+    setlocale(LC_ALL,"es_ES");
+  }
+  $translated_date = DateTime::createFromFormat("F j, Y - H:i", $formatted_date);
+  $translated_date = strftime('%B %e, %Y - %H:%M', $translated_date->getTimestamp());
+  $variables['info_split']['date'] = $translated_date;
+}
