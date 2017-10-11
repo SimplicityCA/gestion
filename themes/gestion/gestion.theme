@@ -38,4 +38,13 @@ function gestion_preprocess_search_result(&$variables) {
   $translated_date = DateTime::createFromFormat("F j, Y - H:i", $formatted_date);
   $translated_date = strftime('%B %e, %Y - %H:%M', $translated_date->getTimestamp());
   $variables['info_split']['date'] = $translated_date;
+  if (isset($result['node']->field_autor->value)) {
+    $variables['info_split']['autor'] = $result['node']->field_autor->value;
+  }
+  $initial_snippet = $result['node']->body->value;
+  $final_snippet = text_summary($initial_snippet, NULL, 350);
+  if ($initial_snippet != $final_snippet) {
+    $final_snippet .= "...";
+  }
+  $variables['info_split']['snippet'] = $final_snippet;
 }

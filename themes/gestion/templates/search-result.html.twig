@@ -57,15 +57,22 @@
  *
  * @ingroup themeable
  */
-#}
+#}	
 {{ title_prefix }}
 <h3{{ title_attributes }}>
   <a href="{{ url }}">{{ title }}</a>
 </h3>
 {{ title_suffix }}
+{% if info_split.autor %}
+  <p>{{ info_split.autor }}</p>
+{% endif %}
 {% if info_split.date %}
   <p>{{ info_split.date }}</p>
 {% endif %}
-{% if snippet %}
+{# {% if snippet %}
   <p{{ content_attributes }}>{{ snippet }}</p>
+{% endif %} #}
+{# Using diferent field for preprocessed snippet #}
+{% if info_split.snippet %}
+  <p>{{ info_split.snippet }}</p>
 {% endif %}
