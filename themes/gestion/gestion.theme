@@ -48,3 +48,23 @@ function gestion_preprocess_search_result(&$variables) {
   }
   $variables['info_split']['snippet'] = $final_snippet;
 }
+
+function gestion_preprocess_field(&$variables, $hook) {
+  // Only for changed field
+  if ($variables['element']['#field_name'] == 'node_changed_date') {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $result_path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+    //Only on /archivo-historico path
+    if ($result_path_alias == '/archivo-historico') {
+      $language_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      if($language_id == "es") {
+        setlocale(LC_ALL,"es_ES");
+      }
+      $timestamp = $variables['element']['#object']->changed->value;
+      $formatted_date = gmdate("F j, Y - H:i", $timestamp);
+      $translated_date = DateTime::createFromFormat("F j, Y - H:i", $formatted_date);
+      $translated_date = strftime('%B %Y', $translated_date->getTimestamp());
+      $variables['items'][0]['content'][0]['#markup'] = $translated_date;
+    }
+  }
+}
