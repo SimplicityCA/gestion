@@ -68,3 +68,8 @@ function gestion_preprocess_field(&$variables, $hook) {
     }
   }
 }
+
+function gestion_form_search_block_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // $form['keys']['#attributes']['title'] = t('Buscar');
+  $form['keys']['#title'] = t('Buscar');
+}
