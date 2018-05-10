@@ -62,7 +62,11 @@
             "replace": false,
             "ignore-duplicates": true
         },
-        "patches": {}
+        "patches": {
+            "drupal/entityqueue": {
+                "#2903149: Fatal error when updating to Drupal 8.4": "https://www.drupal.org/files/issues/2903149.patch"
+            }
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
