@@ -1,0 +1,43 @@
+***************
+*** 30,38 ****
+     *   The entity queue using this plugin.
+     */
+    public function __construct(PluginManagerInterface $manager, $instance_id, array $configuration, EntityQueueInterface $queue) {
+-     parent::__construct($manager, $instance_id, $configuration);
+- 
+      $this->queue = $queue;
+    }
+  
+    /**
+--- 30,38 ----
+     *   The entity queue using this plugin.
+     */
+    public function __construct(PluginManagerInterface $manager, $instance_id, array $configuration, EntityQueueInterface $queue) {
+      $this->queue = $queue;
++ 
++     parent::__construct($manager, $instance_id, $configuration);
+    }
+  
+    /**
+***************
+*** 53,67 ****
+      $this->pluginInstances[$instance_id]->setQueue($this->queue);
+    }
+  
+-   /**
+-    * {@inheritdoc}
+-    */
+-   public function addInstanceId($id, $configuration = NULL) {
+-     // @todo Open a core bug report, the parent class should take care of this..
+-     $this->instanceId = $id;
+-     $this->instanceIDs = array_filter($this->instanceIDs);
+- 
+-     parent::addInstanceId($id, $configuration);
+-   }
+- 
+  }
+--- 53,56 ----
+      $this->pluginInstances[$instance_id]->setQueue($this->queue);
+    }
+  
+  }

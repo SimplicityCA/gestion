@@ -15,7 +15,8 @@
         "cweagans/composer-patches": "^1.6.4",
         "oomphinc/composer-installers-extender": "^1.1",
         "wikimedia/composer-merge-plugin": "^1.4.1",
-        "drupal/core": "^8.2.7"
+        "drupal/core": "^8.2.7",
+        "drupal/entityqueue": "^1.0@alpha"
     },
     "require-dev": {},
     "extra": {
@@ -63,9 +64,6 @@
             "ignore-duplicates": true
         },
         "patches": {
-            "drupal/entityqueue": {
-                "#2903149: Fatal error when updating to Drupal 8.4": "https://www.drupal.org/files/issues/2903149.patch"
-            }
         }
     },
     "minimum-stability": "dev",
