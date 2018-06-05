@@ -766,7 +766,7 @@ if (file_exists($app_root . '/' . $site_path . '/settings.production.php')) {
 }
 
 $databases['default']['default'] = array (
-  'database' => 'gestion',
+  'database' => 'gestion1',
   'username' => 'root',
   'password' => 'root',
   'prefix' => '',
