@@ -17,7 +17,8 @@
         "wikimedia/composer-merge-plugin": "^1.4.1",
         "drupal/core": "^8.2.7",
         "drupal/entityqueue": "^1.0@alpha",
-        "drupal/ds": "^3.1"
+        "drupal/ds": "^3.1",
+        "drupal/layout_plugin": "^1.0@alpha"
     },
     "require-dev": {},
     "extra": {
